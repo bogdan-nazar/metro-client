@@ -1,0 +1,54 @@
+.avitoBanMain {
+	width:240px;
+	height:400px;
+	overflow:hidden;
+}
+.avitoBanHeader {
+	width:240px;
+	height:28px;
+	background:url('images/header.gif') center no-repeat;
+}
+.avitoBanCont {
+	border:1px solid #cfdddd;
+	padding:8px 7px 8px 7px;
+	width:215px;
+	height:351px;
+	margin:0 auto;
+	overflow:hidden;
+	background-color:#ebeeec;
+	font-family:Arial;
+	font-size:11px;
+	color:#636b79;
+	line-height:13px;
+}
+.avitoBanImg {
+	float:left;
+	border:0;
+	margin:2px 6px 2px 0;
+}
+.avitoBanTopic {
+	width:215px;
+	height:12px;
+	background:url('images/topic.gif') center no-repeat;
+}
+a.avitoBanRef:link {
+	font-family:Arial;
+	font-weight:bold;
+	font-size:11px;
+	color:#27749d;
+	text-decoration:underline;
+}
+a.avitoBanRef:visited {
+	font-family:Arial;
+	font-weight:bold;
+	font-size:11px;
+	color:#27749d;
+	text-decoration:underline;
+}
+a.avitoBanRef:hover {
+	font-family:Arial;
+	font-weight:bold;
+	font-size:11px;
+	color:#27749d;
+	text-decoration:none;
+}

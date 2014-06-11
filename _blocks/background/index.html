@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Background Changer</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body style="margin:0;padding:0;">
+<script type="text/javascript">
+// Background Changer Script
+(function(c){
+	var cfg = "";
+	if (typeof c == "undefined") cfg = "bg.jpg";
+	else if (typeof c == "string") cfg = c;
+	else if (typeof c == "object") {
+		for (var n in c) {
+			if (!c.hasOwnProperty(n)) continue;
+			cfg = cfg + "&" + n + "=" + encodeURIComponent(c[n]);
+		}
+		cfg = cfg.replace(/^\&/, "");
+	} else return;
+	if (!cfg) cfg = "bg.jpg";
+	var s = document.createElement("SCRIPT");
+	s.type = "text/javascript";
+	s.async = true;
+	s.src = "/thirdparty-v2/_blocks/background/custom-bg.js?ver=1.0.1&" + cfg;
+	document.getElementsByTagName("head")[0].appendChild(s);
+})({bg: "worldcup2014.png", bgPos: "top center"});
+</script>
+</body>
+</html>

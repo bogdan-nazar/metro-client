@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Lang" content="ru">
+	<meta name="author" content="Bogdan Nazar">
+	<meta http-equiv="Reply-to" content="me@bogdan-nazar.ru">
+	<meta name="description" content="">
+	<meta name="keywords" content="direct advert">
+	<meta name="creation-date" content="19/12/2013">
+	<title>Classifieds Test Page</title>
+	<script type="text/javascript" src="/thirdparty-v2/_core/core.js"></script>
+	<script type="text/javascript" src="/thirdparty-v2/_core/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="/thirdparty-v2/_plugins/iptogeo/iptogeo.js"></script>
+</head>
+<body>
+<div class="html-component">
+<!-- -------------- Classified ------------------- -->
+<div id="thirdparty-classified-inst" style="display:none;"></div>
+<script type="text/javascript">
+	if (typeof thirdpartyClassified != "object") {
+			window.thirdpartyClassified = new ((function(){
+			var _c = function() {
+				this._items = [];
+			};
+			_c.prototype.adriver = function() {
+				var i;
+				function ar_rnd_rep(s) {
+					return s.replace(/!\[rnd\]/g, this.RndNum4NoCash)
+				};
+				function ar_sendPix(s) {
+					if (!s) return false;
+					var d = document;
+					var b = d.body;
+					s = ar_rnd_rep(s.replace(/!\[ref\]/, escape(d.referrer || "unknown")));
+					i = d.createElement("IMG");
+					i.style.position = "absolute";
+					i.style.width = i.style.height = "0px";
+					i.onload = i.onerror = function() {
+						b.removeChild(i);
+						i = b = null;
+					};
+					i.src = s;
+					b.insertBefore(i, b.firstChild);
+					return true;
+				}
+				function ar_c(s) {
+					return !s||(/^http(s|):\/\/|^\/\//i).test(s) ? s : (window.CompPath + s);
+				}
+				var ar_pass = unescape(window.ar_pass || "");
+				var ar_bnum = window.ar_bnum || 1;
+				var ar_picture = ar_rnd_rep(ar_c(window.ar_picture));
+				var ref1 = window.CgiHref;
+				var ref2 = window.CgiHref + (window.ar_alt_link ? ("&rleurl=" + escape(ar_alt_link)) : "");
+				var div = document.createElement("DIV");
+				var a = document.createElement("A");
+				a.onclick = "return ar_sendPix('" + ar_pass + "');";
+				a.href = ref1;
+				a.target = "_blank";
+				var im = document.createElement("IMG");
+				im.border = "0";
+				im.id = "ar_im" + ar_bnum;
+				im.src = ar_picture;
+				a.appendChild(im);
+				div.appendChild(a);
+				var a2 = document.createElement("A");
+				a2.onclick = "return ar_sendPix('" + ar_pass + "');";
+				a2.target = "_blank";
+				a2.innerHTML = window.ar_text;
+				div.appendChild(a2);
+			};
+			_c.prototype.getObj = function(id) {
+				if (typeof this._items[id] != "undefined") return this._items[id];
+				else return false;
+			};
+			_c.prototype.register = function() {
+				var main = document.getElementById("thirdparty-classified-inst");
+				if ((typeof main != "object") || !main) return false;
+				var obj = {};
+				this._items.push(obj);
+				obj.main = main;
+				obj.id = this._items.length - 1;
+				obj.main.id = obj.main.id + obj.id;
+				obj.fAdriver = this.adriver.bind(obj);
+				return obj;
+			};
+			return _c;
+		})());
+	}
+	(function(obj){
+		if (!obj) return;
+		var ar = obj;
+		var tm = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (d.region != "Санкт-Петербург") {
+					obj.RndNum4NoCash = Math.round(Math.random() * 1000000000);
+					obj.ar_Tail = "unknown";
+					if (document.referrer) obj.ar_Tail = escape(document.referrer);
+					var el = document.createElement("SCRIPT");
+					el.type = "text/javascript";
+					el.async = true;
+					el.onload = obj.fAdriver;
+					el.src = ("https:" == document.location.protocol ? "https:" : "http:") + "//ad.adriver.ru/cgi-bin/erle.cgi?sid=161766&bn=10&target=blank&bt=16&pz=3&rnd=" + obj.RndNum4NoCash + "&tail256=" + obj.ar_Tail;
+					document.getElementsByName("head")[0].appendChild(el);
+					return;
+				}
+			}
+			tc++;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, 200);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, 200);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})(thirdpartyClassified.register());
+</script>
+<!-- -------------- /Classified ------------------- -->
+</div>
+</body>
+</html>

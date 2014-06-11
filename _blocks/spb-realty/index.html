@@ -1,0 +1,41 @@
+<!-- SPB Realty Code Start -->
+<div id="thirparty-realty-spb" style="margin:0 auto;width: 270px;"></div>
+<script type="text/javascript">
+	(function(){
+		var el = document.getElementById("thirparty-realty-spb");
+		if (!el) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if ((d.region.indexOf("Санкт-Петербург") !=-1) || (d.region.indexOf("Ленинград") != -1)) {
+					var i = docuemtn.createElement("IFRAME");
+					i.frameborder = "0";
+					i.scrolling = "no";
+					i.width = "270";
+					i.height = "445";
+					i.src = "http://i.realty.metronews.ru/widget/menu.html";
+					el.appendChild(i);
+					el.style.padding = "15px 0";
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- SPB Realty Code End -->

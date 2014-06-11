@@ -1,0 +1,559 @@
+.photo-love {
+	width:858px;
+	padding:10px 0;
+	text-align:left;
+}
+.photo-love .rel {
+	position:relative;
+	height:0;
+}
+.photo-love .soc-votes {
+	width:96px;
+	height:70px;
+	padding:35px 0 0 10px;
+	margin-left:700px;
+	background:url('/thirdparty-v2/_plugins/_images/bg-soc.png') left top no-repeat;
+	overflow:hidden;
+}
+.photo-love .soc-votes .fb-like {
+	padding-top:8px;
+	margin-left:-7px;
+}
+/* ---------------- rated default (4 col) -------------------- */
+.photo-love .rated-items {
+	padding-top:10px;
+}
+.photo-love .rated-items .rated-title {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	font-family:'Verdana';
+	font-size:28px;
+	text-transform:uppercase;
+	background:url('/thirdparty-v2/_plugins/_images/bg-title.png') left top no-repeat;
+}
+.photo-love .rated-items .rated-title-black {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	margin-bottom:5px;
+	background-color:#000;
+	font-family:'Verdana';
+	font-size:28px;
+}
+.photo-love .rated-items .rate-rel {
+	position:relative;
+	height:0;
+}
+.photo-love .rated-items .rate-rel .count {
+	position:absolute;
+	width:37px;
+	height:23px;
+	padding-top:4px;
+	top:0;
+	left:150px;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	color:#FF6600;
+	text-align:center;
+	background:url('/thirdparty-v2/_plugins/_images/photo/bg-rate.png') left top no-repeat;
+	z-index:+1;
+}
+.photo-love .rated-items .row-clear {
+	float:left;
+	height:1px;
+	width:850px;
+}
+/* -------------------- rated 1 col ------------------------ */
+.photo-love .rated-items-1col .item {
+}
+.photo-love .rated-items-1col {
+	padding-top:10px;
+}
+.photo-love .rated-items-1col .rated-title {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	font-family:'Verdana';
+	font-size:28px;
+	text-transform:uppercase;
+	background:url('/thirdparty-v2/_plugins/_images/bg-title.png') left top no-repeat;
+}
+.photo-love .rated-items-1col .rated-title-black {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	margin-bottom:5px;
+	background-color:#000;
+	font-family:'Verdana';
+	font-size:28px;
+}
+.photo-love .rated-items-1col .item {
+	width:300px;
+}
+.photo-love .rated-items-1col .rate-rel {
+	position:relative;
+	height:0;
+}
+.photo-love .rated-items-1col .rate-rel .count {
+	position:absolute;
+	width:37px;
+	height:23px;
+	padding-top:4px;
+	top:0;
+	left:245px;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	color:#FF6600;
+	text-align:center;
+	background:url('/thirdparty-v2/_plugins/_images/photo/bg-rate.png') left top no-repeat;
+	z-index:+1;
+}
+.photo-love .rated-items-1col .row-clear {
+	height:1px;
+}
+/* --------------------- ---------- ------------------------ */
+
+.photo-love .last-items {
+	padding-top:10px;
+}
+.photo-love .last-items .last-title {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	font-family:'Verdana';
+	font-size:28px;
+	text-transform:uppercase;
+	background:url('/thirdparty-v2/_plugins/_images/bg-title.png') left top no-repeat;
+}
+.photo-love .last-items .last-more {
+	overflow:hidden;
+}
+.photo-love .last-items .last-more .btn {
+	float:right;
+	width:70px;
+	height:17px;
+	padding:1px 0 0 22px;
+	background:url('/thirdparty-v2/_plugins/_images/bg-btn-more.png') left center no-repeat;
+	font-family:Arial;
+	font-size:13px;
+	text-decoration:underline;
+	color:#333;
+	cursor:pointer;
+}
+.photo-love .last-items .last-more .waiter {
+	float:right;
+	width:50px;
+	height:18px;
+	font-size:12px;
+	font-family:Arial;
+	background:url('/thirdparty-v2/_plugins/_images/loading-tr.gif') left 4px no-repeat;
+}
+.photo-love .last-items .row-clear {
+	float:left;
+	height:1px;
+	width:850px;
+}
+/* --------------------- form default (3 col) ---------------------------- */
+.photo-love .form {
+	overflow:hidden;
+}
+.photo-love .form .project-info {
+	float:left;
+	width:201px;
+	padding-bottom:8px;
+	background:url('/thirdparty-v2/_plugins/_images/photo/bg-info.gif') right top repeat-y;
+}
+.photo-love .form .project-info .info-title {
+	margin:6px 0 8px 0;
+	border-bottom:1px dashed #b2b2b2;
+	font-size:12px;
+	color:#00853f;
+	text-transform:uppercase;
+}
+.photo-love .form .project-info .info-text {
+	font-size:12px;
+	color:#000;
+}
+.photo-love .form .upload-block {
+	float:left;
+	padding-left:18px;
+	width:630px;
+}
+.photo-love .form .upload-block .prompt-black {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	margin-bottom:5px;
+	background-color:#000;
+	font-family:'Verdana';
+	font-size:28px;
+}
+.photo-love .form .upload-block .prompt {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	font-family:'Verdana';
+	font-size:28px;
+	text-transform:uppercase;
+	background:url('/thirdparty-v2/_plugins/_images/bg-title.png') left top no-repeat;
+}
+.photo-love .form .upload-block .up-img {
+	width:630px;
+	height:370px;
+	background:url('/thirdparty-v2/_plugins/_images/bg-photo.gif') center no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+.photo-love .form .upload-block .fields {
+}
+.photo-love .form .upload-block .fields .field {
+	padding:8px 0 20px 0;
+	overflow:hidden;
+}
+.photo-love .form .upload-block .fields .field .num {
+	float:left;
+	width:25px;
+	height:24px;
+	padding-top:1px;
+	font-family:'Verdana';
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+	background-color:#ff3300;
+	text-align:center;
+}
+.photo-love .form .upload-block .fields .field .data {
+	float:left;
+	position:relative;
+	width:190px;
+	padding:2px 0 0 9px;
+	overflow:hidden;
+	font-size:13px;
+	font-family:Arial;
+	text-decoration:underline;
+	color:#333;
+	cursor:pointer;
+}
+.photo-love .form .upload-block .fields .field .data input[type="file"] {
+	position:absolute;
+	top:-50px;
+	left:-1810px;
+	-moz-opacity:0;
+	filter:alpha(opacity=0);
+	opacity:0;
+	font-size:150px;
+	height:100px;
+	background-color:transparent;
+	cursor:pointer;
+}
+.photo-love .form .upload-block .fields .field .fwaiter {
+	display:none;
+	float:left;
+	width:120px;
+	height:23px;
+	padding:2px 0 0 69px;
+	font-size:13px;
+	font-family:Arial;
+	background:url('/thirdparty-v2/_plugins/_images/loading-tr.gif') 9px 7px no-repeat;
+}
+.photo-love .form .upload-block .fields .blockable {
+	position:relative;
+	width:630px;
+	height:520px;
+}
+.photo-love .form .upload-block .fields .blockable .blocker {
+	position:absolute;
+	display:none;
+	width:630px;
+	height:520px;
+	z-index:+1;
+	background-color:transparent;
+}
+.photo-love .form .upload-block .fields .field input[type="text"] {
+	float:left;
+	display:block;
+	width:591px;
+	height:19px;
+	padding:2px 1px;
+	margin:0 0 0 9px;
+	border:1px solid #a0a0a0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666666;
+	font-style:italic;
+}
+.photo-love .form .upload-block .fields .field textarea {
+	float:left;
+	display:block;
+	width:591px;
+	height:100px;
+	padding:2px 1px;
+	margin:0 0 0 9px;
+	border:1px solid #a0a0a0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666;
+	font-style:italic;
+}
+.photo-love .form .upload-block .fields .usr-field {
+	width:397px;
+	height:21px;
+	padding-left:233px;
+	margin-top:9px;
+	background-image:url('images/bg-user-fields.gif');
+	background-repeat:no-repeat;
+}
+.photo-love .form .upload-block .fields .usr-field input[type="text"] {
+	width:396px;
+	border:0;
+	margin:0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666;
+	background-color:transparent;
+}
+.photo-love .form .upload-block .fields .usr-field.nickname {
+	background-position:left top;
+}
+.photo-love .form .upload-block .fields .usr-field.mobile {
+	background-position:left -21px;
+}
+.photo-love .form .upload-block .fields .usr-field.email {
+	background-position:left -42px;
+}
+.photo-love .form .upload-block .fields .send-field {
+	width:397px;
+	padding:26px 0 0 233px;
+	overflow:hidden;
+}
+.photo-love .form .upload-block .fields .send-field label {
+	float:left;
+	width:230px;
+	vertical-align:top;
+	font-size:11px;
+	font-family:'Arial';
+}
+.photo-love .form .upload-block .fields .send-field label input[type="checkbox"] {
+	margin-right:5px;
+}
+.photo-love .form .upload-block .fields .send-field input[type="button"] {
+	float:left;
+	width:165px;
+	height:19px;
+	margin:0;
+	border:0;
+	background:url('images/bg-btn-send.gif') left top no-repeat;
+}
+.photo-love .form .upload-block .fields .send-field .waiter {
+	display:none;
+	float:left;
+	width:104px;
+	height:17px;
+	padding:1px 0 0 60px;
+	font-size:12px;
+	font-family:Arial;
+	background:url('/thirdparty-v2/_plugins/_images/loading-tr.gif') left 4px no-repeat;
+}
+.photo-love .form .upload-block .waiter {
+	display:none;
+}
+/* ------------------------ form 4 col --------------------------------- */
+.photo-love .form-4col {
+	overflow:hidden;
+	padding-top:10px;
+}
+.photo-love .form-4col .project-info {
+	float:left;
+	width:201px;
+	padding-bottom:8px;
+	background:url('/thirdparty-v2/_plugins/_images/photo/bg-info.gif') right top repeat-y;
+}
+.photo-love .form-4col .project-info .info-title {
+	margin:6px 0 8px 0;
+	border-bottom:1px dashed #b2b2b2;
+	font-size:12px;
+	color:#00853f;
+	text-transform:uppercase;
+}
+.photo-love .form-4col .project-info .info-text {
+	font-size:12px;
+	color:#000;
+}
+.photo-love .form-4col .upload-block {
+	float:left;
+	width:858px;
+}
+.photo-love .form-4col .upload-block .prompt {
+	color:#fff;
+	height:48px;
+	padding:10px 0 0 20px;
+	margin-bottom:5px;
+	background-color:#000;
+	font-family:Verdana;
+	font-size:28px;
+}
+.photo-love .form-4col .upload-block .up-img {
+	width:858px;
+	height:504px;
+	background:url('/thirdparty-v2/_plugins/_images/bg-photo.gif') center no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+.photo-love .form-4col .upload-block .fields {
+}
+.photo-love .form-4col .upload-block .fields .field {
+	padding:8px 0 20px 0;
+	overflow:hidden;
+}
+.photo-love .form-4col .upload-block .fields .field .num {
+	float:left;
+	width:25px;
+	height:24px;
+	padding-top:1px;
+	font-family:'Verdana';
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+	background-color:#ff3300;
+	text-align:center;
+}
+.photo-love .form-4col .upload-block .fields .field .data {
+	float:left;
+	position:relative;
+	width:190px;
+	padding:2px 0 0 9px;
+	overflow:hidden;
+	font-size:13px;
+	font-family:Arial;
+	text-decoration:underline;
+	color:#333;
+	cursor:pointer;
+}
+.photo-love .form-4col .upload-block .fields .field .data input[type="file"] {
+	position:absolute;
+	top:-50px;
+	left:-1810px;
+	-moz-opacity:0;
+	filter:alpha(opacity=0);
+	opacity:0;
+	font-size:150px;
+	height:100px;
+	background-color:transparent;
+	cursor:pointer;
+}
+.photo-love .form-4col .upload-block .fields .field .fwaiter {
+	display:none;
+	float:left;
+	width:120px;
+	height:23px;
+	padding:2px 0 0 69px;
+	font-size:13px;
+	font-family:Arial;
+	background:url('/thirdparty-v2/_plugins/_images/loading-tr.gif') 9px 7px no-repeat;
+}
+.photo-love .form-4col .upload-block .fields .blockable {
+	position:relative;
+	width:630px;
+	height:520px;
+}
+.photo-love .form-4col .upload-block .fields .blockable .blocker {
+	position:absolute;
+	display:none;
+	width:630px;
+	height:520px;
+	z-index:+1;
+	background-color:transparent;
+}
+.photo-love .form-4col .upload-block .fields .field input[type="text"] {
+	float:left;
+	display:block;
+	width:591px;
+	height:19px;
+	padding:2px 1px;
+	margin:0 0 0 9px;
+	border:1px solid #a0a0a0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666666;
+	font-style:italic;
+}
+.photo-love .form-4col .upload-block .fields .field textarea {
+	float:left;
+	display:block;
+	width:591px;
+	height:100px;
+	padding:2px 1px;
+	margin:0 0 0 9px;
+	border:1px solid #a0a0a0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666;
+	font-style:italic;
+}
+.photo-love .form-4col .upload-block .fields .usr-field {
+	width:397px;
+	height:21px;
+	padding-left:233px;
+	margin-top:9px;
+	background-image:url('images/bg-user-fields.gif');
+	background-repeat:no-repeat;
+}
+.photo-love .form-4col .upload-block .fields .usr-field input[type="text"] {
+	width:396px;
+	border:0;
+	margin:0;
+	font-family:'Arial';
+	font-size:13px;
+	color:#666;
+	background-color:transparent;
+}
+.photo-love .form-4col .upload-block .fields .usr-field.nickname {
+	background-position:left top;
+}
+.photo-love .form-4col .upload-block .fields .usr-field.mobile {
+	background-position:left -21px;
+}
+.photo-love .form-4col .upload-block .fields .usr-field.email {
+	background-position:left -42px;
+}
+.photo-love .form-4col .upload-block .fields .send-field {
+	width:397px;
+	padding:26px 0 0 233px;
+	overflow:hidden;
+}
+.photo-love .form-4col .upload-block .fields .send-field label {
+	float:left;
+	width:230px;
+	vertical-align:top;
+	font-size:11px;
+	font-family:'Arial';
+}
+.photo-love .form-4col .upload-block .fields .send-field label input[type="checkbox"] {
+	margin-right:5px;
+}
+.photo-love .form-4col .upload-block .fields .send-field input[type="button"] {
+	float:left;
+	width:165px;
+	height:19px;
+	margin:0;
+	border:0;
+	background:url('images/bg-btn-send.gif') left top no-repeat;
+}
+.photo-love .form-4col .upload-block .fields .send-field .waiter {
+	display:none;
+	float:left;
+	width:104px;
+	height:17px;
+	padding:1px 0 0 60px;
+	font-size:12px;
+	font-family:Arial;
+	background:url('/thirdparty-v2/_plugins/_images/loading-tr.gif') left 4px no-repeat;
+}
+.photo-love .form-4col .upload-block .waiter {
+	display:none;
+}

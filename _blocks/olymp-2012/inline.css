@@ -1,0 +1,397 @@
+.olymp2012.w300 {
+	width:300px;
+}
+.olymp2012 .inline {
+	font-family:Arial,Helvetica,sans-serif;
+	margin:5px 5px 0 5px;
+}
+.olymp2012 .inline .rel {
+	position:relative;
+	width:100%;
+	-khtml-opacity:0.999;
+	-moz-opacity:0.999;
+	-web-kit-opacity:0.999;
+	opacity:0.999;
+}
+.olymp2012 .inline .rel .shad {
+	position:absolute;
+	width:100%;
+	height:63px;
+	background-color:#fff;
+	box-shadow:0 2px 10px rgba(0,0,0,0.3);
+	z-index:-1;
+}
+.olymp2012.w300 .inline .rel .shad {
+	height:43px;
+}
+.olymp2012 .inline table {
+	border:0;
+	width:100%;
+}
+.olymp2012 .inline table thead td {
+	padding-top:43px;
+	height:20px;
+	font-size:11px;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+}
+.olymp2012.w300 .inline table thead td {
+	padding-top:23px;
+}
+.olymp2012 .inline table thead td.place {
+	padding-left:10px;
+	text-align:left;
+}
+.olymp2012 .inline table thead td.state {
+	text-align:left;
+}
+.olymp2012 .inline table thead td.gold {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('images/gold.png');
+	min-width:10px;
+}
+.olymp2012 .inline table thead td.silver {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('images/silver.png');
+	min-width:10px;
+}
+.olymp2012 .inline table thead td.bronze {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('images/bronze.png');
+	min-width:10px;
+}
+.olymp2012 .inline table tbody tr {
+	border-bottom:1px solid #ccc;
+}
+.olymp2012 .inline table tbody tr.ru {
+	background-color:#ececec;
+}
+.olymp2012 .inline table tbody td {
+	padding:12px 0;
+	font-size:12px;
+	text-align:center;
+	background-color:transparent;
+}
+.olymp2012 .inline table tbody td {
+	padding:5px 0;
+}
+.olymp2012 .inline table tbody td.place {
+	padding-left:10px;
+	text-align:left;
+	font-size:10px;
+	color:#9a9a9a;
+}
+.olymp2012 .inline table tbody td.state {
+	padding-left:28px;
+	font-weight:bold;
+	text-align:left;
+	background-position:left center;
+	background-repeat:no-repeat;
+}
+.olymp2012 .inline table tbody td.total {
+	font-weight:bold;
+}
+.olymp2012 .inline table tbody td.state.olympic {
+	background-image:url('images/flags/olympic.png');
+}
+.olymp2012 .inline table tbody td.state.ru {
+	background-image:url('images/flags/ru.png');
+}
+.olymp2012 .inline table tbody td.state.cn {
+	background-image:url('images/flags/cn.png');
+}
+.olymp2012 .inline table tbody td.state.gb {
+	background-image:url('images/flags/gb.png');
+}
+.olymp2012 .inline table tbody td.state.us {
+	background-image:url('images/flags/us.png');
+}
+.olymp2012 .inline table tbody td.state.kr {
+	background-image:url('images/flags/kr.png');
+}
+.olymp2012 .inline table tbody td.state.fr {
+	background-image:url('images/flags/fr.png');
+}
+.olymp2012 .inline table tbody td.state.it {
+	background-image:url('images/flags/it.png');
+}
+.olymp2012 .inline table tbody td.state.de {
+	background-image:url('images/flags/de.png');
+}
+.olymp2012 .inline table tbody td.state.hu {
+	background-image:url('images/flags/hu.png');
+}
+.olymp2012 .inline table tbody td.state.au {
+	background-image:url('images/flags/au.png');
+}
+.olymp2012 .inline table tbody td.state.jp {
+	background-image:url('images/flags/jp.png');
+}
+.olymp2012 .inline table tbody td.state.kz {
+	background-image:url('images/flags/kz.png');
+}
+.olymp2012 .inline table tbody td.state.nl {
+	background-image:url('images/flags/nl.png');
+}
+.olymp2012 .inline table tbody td.state.ua {
+	background-image:url('images/flags/ua.png');
+}
+.olymp2012 .inline table tbody td.state.nz {
+	background-image:url('images/flags/nz.png');
+}
+.olymp2012 .inline table tbody td.state.cu {
+	background-image:url('images/flags/cu.png');
+}
+.olymp2012 .inline table tbody td.state.ir {
+	background-image:url('images/flags/ir.png');
+}
+.olymp2012 .inline table tbody td.state.jm {
+	background-image:url('images/flags/jm.png');
+}
+.olymp2012 .inline table tbody td.state.cz {
+	background-image:url('images/flags/cz.png');
+}
+.olymp2012 .inline table tbody td.state.kp {
+	background-image:url('images/flags/kp.png');
+}
+.olymp2012 .inline table tbody td.state.az {
+	background-image:url('images/flags/az.png');
+}
+.olymp2012 .inline table tbody td.state.br {
+	background-image:url('images/flags/br.png');
+}
+.olymp2012 .inline table tbody td.state.by {
+	background-image:url('images/flags/by.png');
+}
+.olymp2012 .inline table tbody td.state.dk {
+	background-image:url('images/flags/dk.png');
+}
+.olymp2012 .inline table tbody td.state.es {
+	background-image:url('images/flags/es.png');
+}
+.olymp2012 .inline table tbody td.state.et {
+	background-image:url('images/flags/et.png');
+}
+.olymp2012 .inline table tbody td.state.hr {
+	background-image:url('images/flags/hr.png');
+}
+.olymp2012 .inline table tbody td.state.ke {
+	background-image:url('images/flags/ke.png');
+}
+.olymp2012 .inline table tbody td.state.ro {
+	background-image:url('images/flags/ro.png');
+}
+.olymp2012 .inline table tbody td.state.za {
+	background-image:url('images/flags/za.png');
+}
+.olymp2012 .inline table tbody td.state.ch {
+	background-image:url('images/flags/ch.png');
+}
+.olymp2012 .inline table tbody td.state.lt {
+	background-image:url('images/flags/lt.png');
+}
+.olymp2012 .inline table tbody td.state.no {
+	background-image:url('images/flags/no.png');
+}
+.olymp2012 .inline table tbody td.state.pl {
+	background-image:url('images/flags/pl.png');
+}
+.olymp2012 .inline table tbody td.state.tr {
+	background-image:url('images/flags/tr.png');
+}
+.olymp2012 .inline table tbody td.state.ca {
+	background-image:url('images/flags/ca.png');
+}
+.olymp2012 .inline table tbody td.state.co {
+	background-image:url('images/flags/co.png');
+}
+.olymp2012 .inline table tbody td.state.ge {
+	background-image:url('images/flags/ge.png');
+}
+.olymp2012 .inline table tbody td.state.mx {
+	background-image:url('images/flags/mx.png');
+}
+.olymp2012 .inline table tbody td.state.se {
+	background-image:url('images/flags/se.png');
+}
+.olymp2012 .inline table tbody td.state.ar {
+	background-image:url('images/flags/ar.png');
+}
+.olymp2012 .inline table tbody td.state.ie {
+	background-image:url('images/flags/ie.png');
+}
+.olymp2012 .inline table tbody td.state.rc {
+	background-image:url('images/flags/rc.png');
+}
+.olymp2012 .inline table tbody td.state.si {
+	background-image:url('images/flags/si.png');
+}
+.olymp2012 .inline table tbody td.state.tn {
+	background-image:url('images/flags/tn.png');
+}
+.olymp2012 .inline table tbody td.state.do {
+	background-image:url('images/flags/do.png');
+}
+.olymp2012 .inline table tbody td.state.dz {
+	background-image:url('images/flags/dz.png');
+}
+.olymp2012 .inline table tbody td.state.lv {
+	background-image:url('images/flags/lv.png');
+}
+.olymp2012 .inline table tbody td.state.tt {
+	background-image:url('images/flags/tt.png');
+}
+.olymp2012 .inline table tbody td.state.uz {
+	background-image:url('images/flags/uz.png');
+}
+.olymp2012 .inline table tbody td.state.am {
+	background-image:url('images/flags/am.png');
+}
+.olymp2012 .inline table tbody td.state.mn {
+	background-image:url('images/flags/mn.png');
+}
+.olymp2012 .inline table tbody td.state.sk {
+	background-image:url('images/flags/sk.png');
+}
+.olymp2012 .inline table tbody td.state.th {
+	background-image:url('images/flags/th.png');
+}
+.olymp2012 .inline table tbody td.state.ve {
+	background-image:url('images/flags/ve.png');
+}
+.olymp2012 .inline table tbody td.state.be {
+	background-image:url('images/flags/be.png');
+}
+.olymp2012 .inline table tbody td.state.bg {
+	background-image:url('images/flags/bg.png');
+}
+.olymp2012 .inline table tbody td.state.ee {
+	background-image:url('images/flags/ee.png');
+}
+.olymp2012 .inline table tbody td.state.fi {
+	background-image:url('images/flags/fi.png');
+}
+.olymp2012 .inline table tbody td.state.pr {
+	background-image:url('images/flags/pr.png');
+}
+.olymp2012 .inline table tbody td.state.tw {
+	background-image:url('images/flags/tw.png');
+}
+.olymp2012 .inline table tbody td.state.cs {
+	background-image:url('images/flags/cs.png');
+}
+.olymp2012 .inline table tbody td.state.cy {
+	background-image:url('images/flags/cy.png');
+}
+.olymp2012 .inline table tbody td.state.gr {
+	background-image:url('images/flags/gr.png');
+}
+.olymp2012 .inline table tbody td.state.hk {
+	background-image:url('images/flags/hk.png');
+}
+.olymp2012 .inline table tbody td.state.ma {
+	background-image:url('images/flags/ma.png');
+}
+.olymp2012 .inline table tbody td.state.md {
+	background-image:url('images/flags/md.png');
+}
+.olymp2012 .inline table tbody td.state.pt {
+	background-image:url('images/flags/pt.png');
+}
+.olymp2012 .inline table tbody td.state.tj {
+	background-image:url('images/flags/tj.png');
+}
+.olymp2012 .inline table tbody td.state.ad {
+	background-image:url('images/flags/ad.png');
+}
+.olymp2012 .inline table tbody td.state.al {
+	background-image:url('images/flags/al.png');
+}
+.olymp2012 .inline table tbody td.state.at {
+	background-image:url('images/flags/at.png');
+}
+.olymp2012 .inline table tbody td.state.ba {
+	background-image:url('images/flags/ba.png');
+}
+.olymp2012 .inline table tbody td.state.bm {
+	background-image:url('images/flags/bm.png');
+}
+.olymp2012 .inline table tbody td.state.dm {
+	background-image:url('images/flags/dm.png');
+}
+.olymp2012 .inline table tbody td.state.gh {
+	background-image:url('images/flags/gh.png');
+}
+.olymp2012 .inline table tbody td.state.tl {
+	background-image:url('images/flags/tl.png');
+}
+.olymp2012 .inline table tbody td.state.vg {
+	background-image:url('images/flags/vg.png');
+}
+.olymp2012 .inline table tbody td.state.zw {
+	background-image:url('images/flags/zw.png');
+}
+.olymp2012 .inline table tbody td.state.il {
+	background-image:url('images/flags/il.png');
+}
+.olymp2012 .inline table tbody td.state.is {
+	background-image:url('images/flags/is.png');
+}
+.olymp2012 .inline table tbody td.state.kg {
+	background-image:url('images/flags/kg.png');
+}
+.olymp2012 .inline table tbody td.state.ky {
+	background-image:url('images/flags/ky.png');
+}
+.olymp2012 .inline table tbody td.state.lb {
+	background-image:url('images/flags/lb.png');
+}
+.olymp2012 .inline table tbody td.state.li {
+	background-image:url('images/flags/li.png');
+}
+.olymp2012 .inline table tbody td.state.mc {
+	background-image:url('images/flags/mc.png');
+}
+.olymp2012 .inline table tbody td.state.mk {
+	background-image:url('images/flags/mk.png');
+}
+.olymp2012 .inline table tbody td.state.mt {
+	background-image:url('images/flags/mt.png');
+}
+.olymp2012 .inline table tbody td.state.np {
+	background-image:url('images/flags/np.png');
+}
+.olymp2012 .inline table tbody td.state.pe {
+	background-image:url('images/flags/pe.png');
+}
+.olymp2012 .inline table tbody td.state.pk {
+	background-image:url('images/flags/pk.png');
+}
+.olymp2012 .inline table tbody td.state.rs {
+	background-image:url('images/flags/rs.png');
+}
+.olymp2012 .inline table tbody td.state.sm {
+	background-image:url('images/flags/sm.png');
+}
+.olymp2012 .inline table tbody td.state.sn {
+	background-image:url('images/flags/sn.png');
+}
+.olymp2012 .inline table tbody td.state.cl {
+	background-image:url('images/flags/cl.png');
+}
+.olymp2012 .inline table tbody td.state.me {
+	background-image:url('images/flags/me.png');
+}
+.olymp2012 .inline table tbody td.state.ph {
+	background-image:url('images/flags/ph.png');
+}
+.olymp2012 .inline table tbody td.state.tg {
+	background-image:url('images/flags/tg.png');
+}
+.olymp2012 .inline table tbody td.state.to {
+	background-image:url('images/flags/to.png');
+}

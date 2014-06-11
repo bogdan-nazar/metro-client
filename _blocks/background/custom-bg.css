@@ -1,0 +1,85 @@
+.takeover-netbook .news-carousel-component .news-carousel-wrapper {
+	height:484px;
+}
+.takeover-netbook #wrapper {
+	width:1200px;
+}
+.takeover-netbook #body-wrapper {
+	width:1200px;
+}
+.takeover-netbook .main-area {
+	width:858px;
+}
+.takeover-netbook .push-component.medium {
+	width:420px;
+}
+.takeover-netbook .column-item.p4 .push-component.small {
+	width:201px;
+	margin-left:18px;
+}
+.takeover-netbook .column-item.p4 .push-component.small .text, .takeover-netbook .column-item.p4 .push-component.small h4 {
+	margin-left:0;
+	width:inherit;
+}
+.takeover-netbook .push-component.x-large, .takeover-netbook .push-component.x-large-low, .takeover-netbook .poll-component.x-large {
+	width:858px;
+}
+.takeover-netbook .teaser-component.two-col {
+	width:420px;
+}
+.takeover-netbook .main-box.box-2, .takeover-netbook .main-box.box-5, .takeover-netbook .main-box.box-8 {
+	width:639px;
+}
+.takeover-netbook .main-box.box-2 .push-component.large, .takeover-netbook .main-box.box-2 .push-component.large-low, .takeover-netbook .main-box.box-2 .poll-component.large, .takeover-netbook .main-box.box-5 .push-component.large, .takeover-netbook .main-box.box-5 .push-component.large-low, .takeover-netbook .main-box.box-5 .poll-component.large, .takeover-netbook .main-box.box-8 .push-component.large, .takeover-netbook .main-box.box-8 .push-component.large-low, .takeover-netbook .main-box.box-8 .poll-component.large {
+	width:639px;
+}
+.takeover-netbook .main-box.box-2 .column-item.p3 .push-component.small, .takeover-netbook .main-box.box-5 .column-item.p3 .push-component.small, .takeover-netbook .main-box.box-8 .column-item.p3 .push-component.small {
+	margin-left:18px;
+	width:201px;
+}
+.takeover-netbook .main-box.box-2 .column-item.p3 .push-component.small .text, .takeover-netbook .main-box.box-2 .column-item.p3 .push-component.small h4, .takeover-netbook .main-box.box-2 .column-item.p3 .push-component.small .fb-comment-wrapper, .takeover-netbook .main-box.box-5 .column-item.p3 .push-component.small .text, .takeover-netbook .main-box.box-5 .column-item.p3 .push-component.small h4, .takeover-netbook .main-box.box-5 .column-item.p3 .push-component.small .fb-comment-wrapper, .takeover-netbook .main-box.box-8 .column-item.p3 .push-component.small .text, .takeover-netbook .main-box.box-8 .column-item.p3 .push-component.small h4, .takeover-netbook .main-box.box-8 .column-item.p3 .push-component.small .fb-comment-wrapper {
+	width:auto;
+	margin-left:0;
+}
+.takeover-netbook .news-carousel-component .galleria-info h2 {
+	font-size:37px;
+}
+.takeover-netbook .news-carousel-component .galleria-image-nav .galleria-image-nav-right {
+	background:url("/templates/v3/img/galleria/arrow-right-grey.png") no-repeat scroll 50% 50% transparent;
+}
+.takeover-netbook .news-carousel-component .galleria-image-nav .galleria-image-nav-left {
+	background:url("/templates/v3/img/galleria/arrow-left-grey.png") no-repeat scroll 50% 50% transparent;
+}
+.takeover-netbook .article-main-area {
+	width:858px;
+}
+.takeover-netbook .article-top .title, .takeover-netbook .article-body .title {
+	line-height:1;
+}
+.takeover-netbook .article-top .title span, .takeover-netbook .article-body .title span {
+	font-size:52px;
+}
+.takeover-netbook #galleria {
+	height:540px;
+}
+.main-box.box-2 .push-medium .push-component.medium, .main-box.box-5 .push-medium .push-component.medium, .main-box.box-8 .push-medium .push-component.medium, .article-wrapper #gallery-1 .push-component.medium {
+	width:420px;
+}
+.takeover-netbook .aside {
+	float:right;
+	width:201px;
+	padding-left:8px;
+	border-left:1px solid #b2b2b2;
+	margin-left:-1px;
+}
+.takeover-netbook .middle-box .need-margin .push-component, .takeover-netbook .middle-box .need-margin .teaser-component, .takeover-netbook .middle-box .need-margin .poll-component {
+	margin-left:0;
+}
+.takeover-netbook .column-item.p4 .push-component.small .image {
+	float:none;
+	margin-bottom:9px;
+}
+.takeover-netbook .main-box.box-2 .column-item.p3 .push-component.small .image, .takeover-netbook .main-box.box-5 .column-item.p3 .push-component.small .image, .takeover-netbook .main-box.box-8 .column-item.p3 .push-component.small .image {
+	float:none;
+	margin-bottom:9px;
+}

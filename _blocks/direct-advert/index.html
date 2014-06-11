@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Lang" content="ru">
+	<meta name="author" content="Bogdan Nazar">
+	<meta http-equiv="Reply-to" content="me@bogdan-nazar.ru">
+	<meta name="description" content="">
+	<meta name="keywords" content="direct advert">
+	<meta name="creation-date" content="19/12/2013">
+	<title>Direct Advert Test Page</title>
+	<script type="text/javascript" src="/thirdparty-v2/_core/core.js"></script>
+	<script type="text/javascript" src="/thirdparty-v2/_core/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="/thirdparty-v2/_plugins/iptogeo/iptogeo.js"></script>
+</head>
+<body>
+<!-- -------------- DirectAdvert (noSP) ------------------- -->
+	<div id="DIV_DA_136097"></div>
+	<script type="text/javascript">
+		var __da__cnt__img;
+		(function(){
+			var el = document.getElementById("DIV_DA_136097");
+			if (!el) return;
+			var tm = 100;
+			var t = 100;
+			var tc = 0;
+			var f;
+			f = function(d) {
+				if (typeof d == "object") {
+					if ((d.region == "Санкт-Петербург") || (d.region.indexOf("Ленинградская") != -1)) return;
+					el.style.display = "inline-block";
+					var el1 = document.createElement("DIV");
+					el1.style.display = "none";
+					el1.style.textAlign = "center";
+					el.parentNode.appendChild(el1);
+					el1.appendChild(el);
+					var s = document.createElement("SCRIPT");
+					s.async = "true";
+					s.type = "text/javascript";
+					s.charset = "windows-1251";
+					s.src = "http://code.directadvert.ru/show.cgi?adp=136097&div=DIV_DA_136097&nnn=136097&ref=" + escape(document.referrer) + "&t=" + Math.random();
+					(document.getElementsByTagName("HEAD")[0]).appendChild(s);
+					try {
+						__da__cnt__img = new Image();
+						__da__cnt__img.src = "http://www.tns-counter.ru/V13a****directadvert_ru/ru/CP1251/tmsec=directadvert_network/" + Math.round(Math.random() * 1000000000);
+						new Image().src = "//counter.yadro.ru/hit;All_da_nnn_dn_realty?r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "": ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random();
+					} catch (e) {};
+					el1 = document.createElement("DIV");
+					el1.className = "keyline-component";
+					el1.innerHTML = "<span></span>";
+					el.parentNode.insertBefore(el1, el);
+					el1 = document.createElement("DIV");
+					el1.className = "keyline-component";
+					el1.innerHTML = "<div class=\"text\"><h4>Новости партнеров</h4></div>";
+					el.parentNode.insertBefore(el1, el);
+					el.parentNode.style.display = "block";
+					return;
+				}
+				tc++;
+				t = t * 2;
+				if (typeof thirdparty_core == "undefined") {
+					if (tc < tm) window.setTimeout(f, t);
+					return;
+				}
+				var g = thirdparty_core.pluginGet("iptogeo");
+				if (!g) {
+					if (tc < tm) window.setTimeout(f, t);
+					return;
+				}
+				g.getData(f);
+			}
+			f();
+		})();
+	</script>
+<!-- -------------- /DirectAdvert (noSP) ------------------- -->
+</body>
+</html>

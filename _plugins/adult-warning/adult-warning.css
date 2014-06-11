@@ -1,0 +1,27 @@
+.adult-warning {
+}
+.adult-warning .popup-main {
+	text-align:left;
+	width:380px;
+	height:96px;
+	padding:64px 0 0 20px;
+	background:url('images/bg.jpg?ver=2') center no-repeat;
+}
+.adult-warning .popup-main .btn {
+	display:inline-block;
+	width:146px;
+	height:84px;
+	background:url('images/btn.png?ver=2') center no-repeat;
+}
+.adult-warning .popup-main .btn-sp {
+	display:inline-block;
+	width:62px;
+	height:84px;
+}
+.adult-warning .popup-main .btn img {
+	display:block;
+	margin:0;
+	padding:0;
+	border:0;
+	cursor:pointer;
+}

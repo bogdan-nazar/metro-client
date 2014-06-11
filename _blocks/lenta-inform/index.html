@@ -1,0 +1,73 @@
+<!-- LentaInformNews Code Start -->
+<div id="thirdparty-lenta-inform" style="margin:0 auto;width:300px;padding:10px 0;"></div>
+<script type="text/javascript">
+	(function(){
+		var name = "lenta-inform";
+		var main = document.getElementById("thirdparty-" + name);
+		if (!main) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (!((d.region.indexOf("Санкт-Петербург") != -1) || (d.region.indexOf("Ленинград") != -1))) {
+					var el = document.createElement("DIV");
+					el.id = "LentaInformScriptRootN2863";
+					el.className = "news-block-magick";
+					var el1 = document.createElement("DIV");
+					el1.id = "LentaInformPreloadN2863";
+					el.appendChild(el1);
+					var a = document.createElement("A");
+					a.href = "http://lentainform.com/";
+					a.target = "_blank";
+					a.innerHTML = "Загрузка...";
+					el1.appendChild(a);
+					main.appendChild(el);
+					(function(){
+					    var D = new Date(),d = document,b = 'body',ce = 'createElement',ac = 'appendChild',st = 'style',ds = 'display',n = 'none',gi = 'getElementById';
+					    var i = d[ce]('iframe');
+					    i[st][ds] = n;
+					    d[gi]("LentaInformScriptRootN2863")[ac](i);
+					    try{
+					        var iw=i.contentWindow.document;
+					        iw.open();
+					        iw.writeln("<ht" + "ml><bo" + "dy></bo" + "dy></ht" + "ml>");
+					        iw.close();
+					        var c = iw[b];
+					    } catch(e) {
+					        var iw = d;
+					        var c = d[gi]("LentaInformScriptRootN2863");
+					    }
+					    var dv = iw[ce]('div');
+					    dv.id = "MG_ID";
+					    dv[st][ds] = n;
+					    dv.innerHTML = 2863;
+					    c[ac](dv);
+					    var s = iw[ce]('script');
+					    s.async = 'async';
+					    s.defer = 'defer';
+					    s.charset = 'utf-8';
+					    s.src = "http://jsn.lentainform.com/m/e/metronews.ru.2863.js?t=" + D.getYear() + D.getMonth() + D.getDate() + D.getHours();
+					    c[ac](s);
+					})();
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- LentaInformNews Code End -->

@@ -1,0 +1,35 @@
+<div id="thirparty-rollad-486988" style="display:none;text-align:center;">
+<div style="display:inline-block;">
+<script charset="UTF-8" src="http://cdn.rollad.ru/rollad.js"></script>
+<div><script type="text/javascript">RRoller.load(486988)</script></div>
+</div>
+</div>
+<script type="text/javascript">
+	(function(){
+		var el = document.getElementById("thirparty-rollad-486988");
+		if (!el) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (d.region != "Санкт-Петербург") el.style.display = "block";
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>

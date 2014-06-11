@@ -1,0 +1,44 @@
+<!-- George Awards Code Start -->
+<div id="thirdparty-george-awards" style="margin:0 auto;width:300px;padding:10px 0;"></div>
+<script type="text/javascript">
+	(function(){
+		var name = "george-awards";
+		var el = document.getElementById("thirdparty-" + name);
+		if (!el) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (!((d.region.indexOf("Санкт-Петербург") != -1) || (d.region.indexOf("Ленинград") != -1))) {
+					var a = document.createElement("A");
+					//a.href = "http://www.national-movie-awards.ru/vote/2014/";
+					a.href = "/special/georges/";
+					el.appendChild(a);
+					var i = document.createElement("IMAGE");
+					i.src = "/special/georges/_uploads/georges-300x300.jpg";
+					i.style.display = "block";
+					i.style.margin = "0";
+					i.style.border = "none";
+					a.appendChild(i);
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- George Awards Code End -->
