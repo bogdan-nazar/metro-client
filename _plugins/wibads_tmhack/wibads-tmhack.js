@@ -21,7 +21,6 @@ function WibAdsHack() {
 	"    </div>" +
 	"  </div>" +
 	"</div>";
-
 	var append_fif = function(ad) {
 		var iframe = document.createElement("iframe");
 		iframe.style.margin = "0px";
@@ -39,7 +38,6 @@ function WibAdsHack() {
 		ad_expander.html("");
 		ad_expander.append(iframe);
 	}
-
 	// API
 	// Constructor function
 	this.init = function() {
@@ -51,7 +49,6 @@ function WibAdsHack() {
 			}
 		}
 	}
-
 	// Reload a specific or all reloadable ads
 	this.reload = function(ad_pos, extra) {
 		if (ad_pos == 22) {
@@ -137,7 +134,6 @@ function WibAdsHack() {
 		$("#imageData").css({visibility: "visible" });
 	}
 }
-
 // Callback from Lightbox upon image switch
 function wibAdsShowGalleryOverlay(from, to) {
 	wib_ads.close_gallery_overlay();
