@@ -1,6 +1,6 @@
 /*
  * Плагин MenuExtend
- * Версия: 1.0.11 (15.04.2015 12:01 +0400)
+ * Версия: 1.0.13 (15.04.2015 15:37 +0400)
  * Developer: Bogdan Nazar <nazar.bogdan@gmail.com>
  * Copyright (c) 2005-2015 Metro
  *
@@ -167,6 +167,7 @@ _p.prototype.render = function() {
 	bi.style.fontWeight = "bold";
 	bi.style.borderRadius = "5px";
 	bi.style.cursor = "pointer";
+	bi.innerHTML = "X";
 	b.appendChild(bi);
 	c.appendChild(b);
 	//пункты меню
@@ -186,14 +187,14 @@ _p.prototype.render = function() {
 	var f = function() {
 		$(c).stop(true, false);
 		if (state) $(c).animate({height: 0, opacity: 0}, 500, function() {
-			this.style.display = "none";
+			c.style.display = "none";
 		}); else {
 			c.style.display = "block";
 			$(c).animate({height: h, opacity: 1}, 500);
 		}
 		state = state ? 0 : 1;
 	};
-	$(el).on("click", f);
+	$(t).on("click", f);
 	$(bi).on("click", f);
 	$(t).mouseover(function() {t.style.textDecoration = "underline";});
 	$(t).mouseout(function() {t.style.textDecoration = "none";});
