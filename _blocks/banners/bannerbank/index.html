@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Lang" content="en">
+	<meta name="author" content="">
+	<meta http-equiv="Reply-to" content="@.com">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="creation-date" content="06/01/2011">
+	<meta name="revisit-after" content="15 days">
+	<title>Untitled</title>
+	<link rel="stylesheet" type="text/css" href="my.css">
+</head>
+<body>
+<script language="JavaScript">
+	// код вставки баннера в место 240x400 [bt=49, poster]
+	(function(L) {
+		if (typeof(ar_cn) == "undefined") ar_cn=1;
+		var S = "setTimeout(function(e){if(!self.CgiHref){document.close();e=parent.document.getElementById(\"ar_container_\"+ar_bnum);e.parentNode.removeChild(e);}},3000);",
+		j = " type=\"text/javascript\"",
+		t = 0,
+		D = document,
+		n = ar_cn;
+		L+=escape(D.referrer||'unknown')+'&rnd='+Math.round(Math.random()*999999999);
+		function _() {
+			if(t++<100) {
+				var F = D.getElementById("ar_container_" + n);
+				if (F) {
+					try {
+						var d = F.contentDocument||(window.ActiveXObject&&window.frames['ar_container_' + n].document);
+						if (d) {
+							d.write('<sc'+'ript'+j+'>var ar_bnum='+n+';' + S + '<\/sc'+'ript><sc'+'ript' + j + ' src="' + L + '"><\/sc'+'ript>');
+							t=0;
+						} else setTimeout(_, 100);
+					} catch(e) {
+						try {
+							F.src="javascript:{document.write('<sc'+'ript"+j+">var ar_bnum=" + n + "; document.domain=\"" + D.domain+"\";" + S + "<\/sc'+'ript>');document.write('<sc'+'ript" + j + " src=\"" + L + "\"><\/sc'+'ript>');}";
+							return;
+						} catch(E) {}
+					}
+				} else setTimeout(_,100);
+			}
+  		}
+		D.write('<div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"><iframe id="ar_container_' + ar_cn + '" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div><div id="ad_ph_' + ar_cn + '" style="display:none;"><\/div>');
+		_();
+		ar_cn++;
+	})('http://ad.adriver.ru/cgi-bin/erle.cgi?sid=161766&target=blank&bn=2&pz=1&bt=49&tail256=');
+
+	//-->
+
+	//код баннера
+	ar_bnum = window.ar_bnum || 1;
+	function ar_rnd_rep(s) {
+		return s.replace(/!\[rnd\]/g,RndNum4NoCash);
+	}
+	function ar_sendPix(s, b, i) {
+		if (typeof s == "undefined") {
+			s = unescape(window.ar_pass || "");
+		}
+		if (!s) return;
+		var d = parent.document;
+		s = ar_rnd_rep(s.replace(/!\[ref\]/, escape(d.referrer||"unknown")));
+		if (b = d.body) {
+			i = d.createElement("IMG");
+			i.style.position = "absolute";
+			i.style.width = i.style.height = "0px";
+			i.onload = i.onerror = function(){
+				b.removeChild(i);
+				i = b = null;
+			};
+			i.src = s;
+			b.insertBefore(i, b.firstChild);
+		} else new Image().src = s;
+		return true;
+	}
+	function ar_c(s) {
+		return !s||(/^http(s|):\/\/|^\/\//i).test(s)?s:CompPath+s;
+	}
+	if (parent && (parent.ar_sendPix == "undefined")) {
+		parent.ar_sendPix = ar_sendPix;
+	}
+	var loc = "";
+	try {loc = escape(top.location.href);} catch(e) {;}
+	var userid = 174942328;
+	var page = 1;
+	var rndnum = Math.round(Math.random() * 999111);
+	var c = document.createElement("DIV");
+	c.style.textAlign = "center";
+	c.style.width = "240px";
+	c.onclick = ar_sendPix;
+	var f = document.createElement("IFRAME");
+	f.style.border = "0";
+	f.style.padding = "0";
+	f.style.margin = "0";
+	f.style.outline = "0";
+	f.style.width = "240px";
+	f.style.height = "400px";
+	f.style.overflow = "hidden";
+	f.setAttribute("vspace", "0");
+	f.setAttribute("hspace", "0");
+	f.setAttribute("width", "240");
+	f.setAttribute("height", "400");
+	f.setAttribute("frameborder", "0");
+	f.setAttribute("scrolling", "no");
+	f.setAttribute("marginwidth", "no");
+	f.setAttribute("marginheight", "no");
+	f.src = "http://ad3.bannerbank.ru/bb.cgi?cmd=ad&hreftarget=_blank&pubid=" + userid + "&pg=" + page + "&vbn=1982&w=240&h=400&num=1&r=ssi&ssi=nofillers&r=ssi&nocache=" + rndnum + "&ref=" + escape(document.referrer) + "&loc=" + loc;
+	f.onclick = ar_sendPix;
+	c.appendChild(f);
+	var ad_fr = parent.document.getElementById("ad_ph_" + ar_bnum);
+	if ((self != parent) && ad_fr) {
+		ad_fr.appendChild(c);
+		ad_fr.style.display = "block";
+	}
+</script>
+</body>
+</html>

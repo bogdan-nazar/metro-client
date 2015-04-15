@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Lang" content="en">
+<meta name="author" content="">
+<meta http-equiv="Reply-to" content="@.com">
+<meta name="generator" content="PhpED 6.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="creation-date" content="06/01/2011">
+<meta name="revisit-after" content="15 days">
+<title>Spb NoMsk1 block</title>
+</head>
+<body>
+<!-- -------------- 2 pushes (noMSK) ------------------- -->
+<div id="no_msk_1" style="display:none;"></div>
+<script type="text/javascript">
+	var partners_right_obj;
+	(function(){
+		partners_right_obj = document.getElementById("no_msk_1");
+		if (partners_right_obj === null) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (d.region != "Москва") {
+					var script = document.createElement("SCRIPT");
+					script.type = "text/javascript";
+					script.async = true;
+					script.src = "http://mint-widgets.s3.amazonaws.com/partners-right-column.js?v=" + Math.random();
+					script.charset = "utf8";
+					var h = document.getElementsByTagName("HEAD")[0];
+					if (h.childNodes.length) h.insertBefore(script, h.childNodes[0]);
+					else h.appendChild(script);
+					partners_right_obj.style.display = "block";
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- -------------- /2 pushes (noMSK) ------------------- -->
+</body>
+</html>
+
+
