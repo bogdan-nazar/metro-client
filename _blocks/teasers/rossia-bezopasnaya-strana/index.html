@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Lang" content="en">
+<meta name="author" content="">
+<meta http-equiv="Reply-to" content="@.com">
+<meta name="generator" content="PhpED 6.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="creation-date" content="06/01/2011">
+<meta name="revisit-after" content="15 days">
+<title>Untitled</title>
+<link rel="stylesheet" type="text/css" href="my.css">
+</head>
+<body>
+<!-- -------------- teaser (noSPB) ------------------- -->
+<div style="text-align:center;display:none;margin:2px 0;" id="teaser-rossia-bezopasnaya-strana">
+	<div style="display:inline-block;width:240px;height:90px;">
+		<a href="/novosti-partnerov36/rossija-ostajotsja-v-chisle-naibolee-bezopasnyh-stran-dlja-evreev/TpoodB---Sdo6JnITU39t2/" style="display:block;float:left;width:90px;height:90px;background:url('http://www.metronews.ru/thirdparty-v2/_blocks/teasers/rossia-bezopasnaya-strana/123.jpg') center no-repeat;background-size:cover;" target="_blank"></a>
+		<div style="margin-left:93px;text-align:left;">
+			<a href="/novosti-partnerov36/rossija-ostajotsja-v-chisle-naibolee-bezopasnyh-stran-dlja-evreev/TpoodB---Sdo6JnITU39t2/" target="_blank" style="color:#000;font-size:13px;font-family: Helvetica, Arial, sans-serif;font-weight:bold;text-decoration:underline;">Россия безопасная страна</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function(){
+		var el = document.getElementById("teaser-rossia-bezopasnaya-strana");
+		if (el === null) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (d.region != "Санкт-Петербург") {
+					el.style.display = "block";
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- -------------- /teaser (noSPB) ------------------- -->
+</body>
+</html>

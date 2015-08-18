@@ -6,11 +6,11 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Lang" content="en">
-<meta name="author" content="">
+<meta name="author" content="Bogdan Nazar">
 <meta http-equiv="Reply-to" content="@.com">
 <meta name="generator" content="PhpED 6.0">
-<meta name="description" content="">
-<meta name="keywords" content="">
+<meta name="description" content="Home-section insertion code">
+<meta name="keywords" content="metronews, home-section">
 <meta name="creation-date" content="06/01/2011">
 <meta name="revisit-after" content="15 days">
 <title>Untitled</title>
@@ -21,7 +21,7 @@
 <!-- скрипт региональных блоков -->
 <script type="text/javascript">
 (function(){
-	var pluginVersion = "1.0.22";
+	var pluginVersion = "1.0.24";
 	if (typeof thirdparty_shared == "undefined") {
 		thirdparty_shared = {};
 		(function(ts){
@@ -36,44 +36,136 @@
 	if (typeof thirdpartyHomeSectionStat == "undefined") thirdpartyHomeSectionStat = {};
 	var configs = [{
 		debugIP:			"",
-		destDom:			"section-1",
-		destDivsSkip:		9,
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
 		mode:				"server",
-		sourceDom:			"section-1",
+		sourceDom:			"section-4",
 		sourceSection:		"chelyabinsk",
-		sourceDivsInsert:	8,
+		sourceDivsInsert:	9,
 		sourceDivsSkip:		0,
-		triggerPath:		"",//leave empty for index page
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
 	},{
 		debugIP:			"",
-		destDom:			"section-1",
-		destDivsSkip:		9,
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
 		mode:				"server",
-		sourceDom:			"section-1",
+		sourceDom:			"section-4",
 		sourceSection:		"ekaterinburg",
-		sourceDivsInsert:	8,
+		sourceDivsInsert:	9,
 		sourceDivsSkip:		0,
-		triggerPath:		"",//leave empty for index page
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
 	},{
 		debugIP:			"",
-		destDom:			"section-1",
-		destDivsSkip:		9,
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
 		mode:				"server",
-		sourceDom:			"section-1",
+		sourceDom:			"section-4",
 		sourceSection:		"kazan",
-		sourceDivsInsert:	8,
+		sourceDivsInsert:	9,
 		sourceDivsSkip:		0,
-		triggerPath:		"",//leave empty for index page
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
 	},{
 		debugIP:			"",
-		destDom:			"section-1",
-		destDivsSkip:		9,
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
 		mode:				"server",
-		sourceDom:			"section-1",
-		sourceSection:		"omsk",
-		sourceDivsInsert:	8,
+		sourceDom:			"section-4",
+		sourceSection:		"nn",
+		sourceDivsInsert:	9,
 		sourceDivsSkip:		0,
-		triggerPath:		"",//leave empty for index page
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"novosibirsk",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"omsk",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"rnd",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"smolensk",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"tlt",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"ufa",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
+	},{
+		debugIP:			"",
+		destDom:			"section-4",
+		destDivsRem:		"all",
+		destDivsSkip:		0,
+		mode:				"server",
+		sourceDom:			"section-4",
+		sourceSection:		"voronezh",
+		sourceDivsInsert:	9,
+		sourceDivsSkip:		0,
+		statSave:			false,
+		triggerPath:		""//leave empty for index page
 	}];
 	var f = function(hs) {
 		if (!hs) return;

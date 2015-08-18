@@ -1,15 +1,61 @@
 /*
  * Плагин WibAds Timeout Hack
- * Версия: 1.0.4 build 2 (01.07.2014 16:23 +0400)
+ * Версия: 1.0.13 (18.08.2015 23:44 +0400)
  * Developer: Bogdan Nazar <nazar.bogdan@gmail.com>
- * Copyright (c) 2005-2013 Metro
+ * Copyright (c) 2005-2015 Metro
  *
- * Требования:  Metro Core Thirdparty
+ * Requirements: Metro Thirdparty Core ver.2
  */
-function WibAdsHack() {
+(function(worker){
+	var wads = worker;//our instance constructor
+	var tm = 100;
+	var tamp = 1.5;
+	var paused = true;
+	var start = function() {
+		if (typeof WibAds != "function") {
+			//wait for original WibAds constructor
+			tm = tm * tamp;
+			window.setTimeout(start, parseInt(tm, 10));
+			return;
+		}
+		if ((typeof wib_ads_thirdparty == "undefined") || (typeof wib_ads_thirdparty.instance == "undefined")) {
+			if (typeof wib_ads_thirdparty == "undefined") {
+				wib_ads_thirdparty = {};
+				wib_ads_thirdparty.got = false;
+				wib_ads_thirdparty.ads = [];
+			}
+			try {
+				//clearing gallery callback of previous instance
+				var cbs = wib_gallery_paging_slideshow_event.callbacks;
+				if (cbs.length) {
+					for (var c = 0; c < cbs.length; c++) {
+						if (cbs[c] == wib_ads.reload) {
+							wib_gallery_paging_slideshow_event.callbacks.splice(c, 1);
+							break;
+						}
+					}
+				}
+				if (paused) return;
+				//initiating new modified instance
+				wib_ads_thirdparty.got = true;//for backward compatibility with ver 1.0.4
+				wib_ads_thirdparty.instance = new wads();
+				wib_ads = wib_ads_thirdparty.instance;
+				wib_ads.thirdparty = true;//indicate replaced instance
+				wib_ads.init();
+				var reload = function(ad_pos, extra) {
+					wib_ads.reload(ad_pos, extra);
+				};
+				wib_gallery_paging_slideshow_event.registerCb(reload);
+			} catch (e) {
+				console.log("Can't implement wib_ads slideshow event [wib_ads.reload], interpreter says: [" + e.name + "/" + e.message + "]");
+			}
+		}
+	};
+	start();
+})(function(){
 	var _reloadTm = 30000;
 	var _lastReloaded = {};
-	var reloadable_ads;
+	var reloadable_ads = [];
 	var gallery_overlay_ad;
 	var gallery_overlay_ad_html =
 	"<div class='ad' id='ad22'>" +
@@ -37,16 +83,46 @@ function WibAdsHack() {
 		var ad_expander = $("#ad" + ad.pos + "_expander");
 		ad_expander.html("");
 		ad_expander.append(iframe);
-	}
+	};
+
+	var reloadCheck = function(ad) {
+		//exclusion for SPT
+		var geoSPT = false, region = "";
+		if (ad.geo_spt) {
+			if (typeof ad.region == "undefined") {
+				if (typeof thirdparty_core != "undefined") {
+					try {
+						var g = thirdparty_core.pluginGet("iptogeo");
+						var geo = g.getData(false);
+						if ((typeof geo == "object") && geo && (typeof geo.region != "undefined")) ad.region = geo.region;
+					} catch(e){}
+				}
+			} else region = ad.region;
+			if ((region == "Санкт-Петербург") || (region.indexOf("Ленинград") != -1)) geoSPT = true;
+		}
+		if (geoSPT) return true;
+		//
+		try {
+			var t = new Date().getTime();
+			if (typeof _lastReloaded[ad.pos] != "object") {
+				_lastReloaded[ad.pos] = {tm: 0, ival: ((typeof ad.ival == "number") ? ad.ival : _reloadTm)};
+			}
+			if ((t - _lastReloaded[ad.pos].tm) > _lastReloaded[ad.pos].ival) {
+				_lastReloaded[ad.pos].tm = t;
+				return true;
+			}
+		} catch(e) {
+			console.log("Can't check wib_ads timeout for " + ad.pos + ": [" + e.name + "/" + e.message + "]");
+		}
+		return false;
+	};
+
 	// API
 	// Constructor function
 	this.init = function() {
-		reloadable_ads = new Array();
-		if (typeof wib_ads_thirdparty != "undefined") {
-			for (c in wib_ads_thirdparty.ads) {
-				if (!wib_ads_thirdparty.ads.hasOwnProperty(c)) continue;
-				reloadable_ads.push(wib_ads_thirdparty.ads[c]);
-			}
+		for (c in wib_ads_thirdparty.ads) {
+			if (!wib_ads_thirdparty.ads.hasOwnProperty(c)) continue;
+			reloadable_ads.push(wib_ads_thirdparty.ads[c]);
 		}
 	}
 	// Reload a specific or all reloadable ads
@@ -63,41 +139,16 @@ function WibAdsHack() {
 			// Append the fif to the ad container
 			append_fif(gallery_overlay_ad);
 		} else {
+			var reload;
 			for (var i = 0; i < reloadable_ads.length; i++) {
 				if (!reloadable_ads.hasOwnProperty(i)) continue;
-				if ((typeof reloadable_ads[i].tm_hack == "boolean") && reloadable_ads[i].tm_hack) {
-					var geoSPT = false;
-					if ((typeof reloadable_ads[i].geo_spt == "boolean") && reloadable_ads[i].geo_spt) {
-						if (typeof thirdparty_core != "undefined") {
-							try {
-								var g = thirdparty_core.pluginGet("iptogeo");
-								var geo = g.getData(false);
-								if ((typeof geo == "object") && (geo) && (typeof geo.region != "undefined")) {
-									if ((geo.region == "Санкт-Петербург") || (geo.region == "Ленинградская область")) geoSPT = true;
-								}
-							} catch(e){}
-						}
-					}
-					if (geoSPT) append_fif(reloadable_ads[i]);
-					else {
-						try {
-							var t = new Date().getTime();
-							if (typeof _lastReloaded[reloadable_ads[i].pos] != "object") {
-								_lastReloaded[reloadable_ads[i].pos] = {tm: 0, ival: ((typeof reloadable_ads[i].ival == "number") ? reloadable_ads[i].ival : _reloadTm)};
-							}
-							if ((t - _lastReloaded[reloadable_ads[i].pos].tm) > _lastReloaded[reloadable_ads[i].pos].ival) {
-								_lastReloaded[reloadable_ads[i].pos].tm = t;
-								append_fif(reloadable_ads[i]);
-							} else return;
-						} catch(e) {
-							append_fif(reloadable_ads[i]);
-							console.log("Can't check wib_ads timeout for " + reloadable_ads[i].pos + ": [" + e.name + "/" + e.message + "]");
-						}
-					}
-				} else append_fif(reloadable_ads[i]);
+				reload = false;
+				if ((typeof reloadable_ads[i].tm_hack == "boolean") && reloadable_ads[i].tm_hack) reload = reloadCheck(reloadable_ads[i]);
+				if (reload) append_fif(reloadable_ads[i]);
 			}
 		}
-	}
+	};
+
 	// Initiate the reloadable ads
 	this.set_reloadable_ad = function(provider, pos, src, width, height) {
 		if ((typeof provider == "object") && provider) reloadable_ads.push(provider);
@@ -133,33 +184,7 @@ function WibAdsHack() {
 		$("#imageContainer").css({visibility: "visible" });
 		$("#imageData").css({visibility: "visible" });
 	}
-}
-// Callback from Lightbox upon image switch
-function wibAdsShowGalleryOverlay(from, to) {
-	wib_ads.close_gallery_overlay();
-	wib_ads.reload("22", {"from": from ? from: 0, "to": to});
-}
-
-if ((typeof wib_ads_thirdparty == "undefined") || !wib_ads_thirdparty.got) {
-	try {
-		var l = wib_gallery_paging_slideshow_event.callbacks.length;
-		if (l) {
-			for (var p in wib_gallery_paging_slideshow_event.callbacks) {
-				if (wib_gallery_paging_slideshow_event.callbacks[p] == wib_ads.reload) {
-					wib_gallery_paging_slideshow_event.callbacks.splice(p, 1);
-					break;
-				}
-			}
-		}
-		wib_ads = new WibAdsHack();
-		wib_ads.thirdparty = true;
-		wib_ads.init();
-		wib_gallery_paging_slideshow_event.registerCb(wib_ads.reload);
-	} catch (e) {
-		console.log("Can't implement wib_ads slideshow event [wib_ads.reload], interpreter says: [" + e.name + "/" + e.message + "]");
-	}
-}
-
+});
 /*/код для adfox-->
 //replace pos, width and height with actual values
 //wib_ads.set_reloadable_ad("adfox","adcomp-18",ad_src,"240","400"); //old fashion call

@@ -1,9 +1,9 @@
 /*
  * Плагин Metro Home Section
- * Версия: 1.0.22 (17.09.2013 15:18 +0400)
+ * Версия: 1.0.26 (15.05.2015 18:28 +0400)
  * Developer: Bogdan Nazar
  * Type: Prototype
- * Copyright (c) 2005-2013 Metro
+ * Copyright (c) 2005-2015 Metro
  *
  * Требования:  Metro Core Thirdparty
  */
@@ -43,15 +43,17 @@ var _home_section = function() {
 	this._config		=	{
 		_loaded:			false,
 		debugIP:			"",
-		destDom:			"section-1",
+		destDom:			"section-4",
 		destDivsSkip:		3,
+		destDivsRem:		"all",
 		mode:				"client",
 		serverURL:			"http://apps.metronews.ru/pool/home-section/index.php",
-		sourceDom:			"section-1",
+		sourceDom:			"section-4",
 		sourceSection:		"",
 		sourceDivsInsert:	8,
 		sourceDivsSkip:		0,
 		sourceDivsMaxProc:	300,
+		statSave:			false,
 		triggerPath:		""//leave empty for index page
 	};
 	this._debug			=	true;
@@ -70,6 +72,10 @@ var _home_section = function() {
 				geo:		["Казань", "Республика Татарстан"],
 				path:		"region/kazan",
 			},
+			nn:	{
+				geo:		["Нижний Новгород", "Нижегородская область"],
+				path:		"region/nn",
+			},
 			novosibirsk:	{
 				geo:		["Новосибирск", "Новосибирская область"],
 				path:		"region/novosibirsk",
@@ -77,6 +83,22 @@ var _home_section = function() {
 			omsk:	{
 				geo:		["Омск", "Омская область"],
 				path:		"region/omsk",
+			},
+			rnd:	{
+				geo:		["Ростов-на-Дону", "Ростовская область"],
+				path:		"region/rnd",
+			},
+			smolensk:	{
+				geo:		["Смоленск", "Смоленская область"],
+				path:		"region/smolensk",
+			},
+			tlt:	{
+				geo:		["Тольятти", "Самарская область"],
+				path:		"region/tlt",
+			},
+			ufa:	{
+				geo:		["Уфа", "Республика Башкортостан"],
+				path:		"region/ufa",
 			},
 			voronezh:	{
 				geo:		["Воронеж", "Воронежская область"],
@@ -139,6 +161,7 @@ _home_section.prototype._init = function(last, config) {
 		}
 	}
 	this._inited = true;
+	this.elDestDom.style.minHeight = "1px";
 	if (typeof thirdpartyHomeSectionStat == "object") {
 		if (typeof thirdpartyHomeSectionStat[this._config.sourceSection] != "undefined")
 			thirdpartyHomeSectionStat[this._config.sourceSection].push(new Date().getTime());
@@ -184,7 +207,7 @@ _home_section.prototype.actionSectionGet = function() {
 		if (isNaN(instance)) instance = 1;
 		var req = this.plCore.reqXBuild(this);
 		req.method = "GET";
-		req.url = this._config.serverURL + "?region=" + this._config.sourceSection + "&callback=" + this.plCore.base64.encode(("thirdparty_core.pluginGetInstance(\"" + this._nameProto + "\", " + instance + ").onData")) + "&skip=" + this._config.sourceDivsSkip + "&fetch=" + this._config.sourceDivsInsert;
+		req.url = this._config.serverURL + "?region=" + this._config.sourceSection + "&section=" + encodeURIComponent(this._config.sourceDom) + "&callback=" + this.plCore.base64.encode(("thirdparty_core.pluginGetInstance(\"" + this._nameProto + "\", " + instance + ").onData")) + "&skip=" + this._config.sourceDivsSkip + "&fetch=" + this._config.sourceDivsInsert;
 		this.plCore.silentX(req);
 	}
 };
@@ -238,13 +261,14 @@ _home_section.prototype.configImport = function(config) {
 				this._config[c] = config[c];
 				break;
 			case "destDivsSkip":
-				if ((typeof config.destDivsSkip == "string") && (config.destDivsSkip == "all")) this._config.destDivsSkip = "all";
+			case "destDivsRem":
+				if ((typeof config[c] == "string") && (config[c] == "all")) this._config[c] = "all";
 				else {
-					if (typeof config.destDivsSkip == "number") this._config.destDivsSkip = config.destDivsSkip;
+					if (typeof config[c] == "number") this._config[c] = config[c];
 					else {
-						var n = parseInt(config.destDivsSkip, 10);
+						var n = parseInt(config[c], 10);
 						if (isNaN(n)) return false;
-						this._config.destDivsSkip = n;
+						this._config[c] = n;
 					}
 				}
 				break;
@@ -279,6 +303,8 @@ _home_section.prototype.configImport = function(config) {
 				if (typeof config[c] != "string") return false;
 				this._config[c] = config[c].replace(/^\/|\/$/g, "");
 				break;
+			default:
+				this._config[c] = config[c];
 		}
 	}
 	if (this._config.sourceDivsSkip == "all") return false;
@@ -314,7 +340,7 @@ _home_section.prototype.domUpdate = function(sd) {
 	}
 	var refNode = false;
 	var cnt = 0;
-	if ((this._config.destDivsSkip !== 0) &&  (this._config.destDivsSkip !== "all")) {
+	if (this._config.destDivsSkip !== "all") {
 		for (var c in this.elDestDom.childNodes) {
 			if (typeof this.elDestDom.childNodes[c].tagName == "undefined") continue;
 			if (this.elDestDom.childNodes[c].tagName.toUpperCase() != "DIV") continue;
@@ -323,6 +349,32 @@ _home_section.prototype.domUpdate = function(sd) {
 				refNode = this.elDestDom.childNodes[c];
 				break;
 			}
+		}
+	}
+	if (this._config.destDivsSkip !== "all") {
+		var rem = [], cnt2 = 0;
+		if (this._config.destDivsRem !== "all") {
+			for (var c in this.elDestDom.childNodes) {
+				if (typeof this.elDestDom.childNodes[c].tagName == "undefined") continue;
+				if (this.elDestDom.childNodes[c].tagName.toUpperCase() != "DIV") continue;
+				cnt++;
+				if (cnt <= this._config.destDivsSkip) continue;
+				cnt2++;
+				if (cnt2 > this._config.destDivsRem) break;
+				rem.push(this.elDestDom.childNodes[c]);
+			}
+		} else {
+			for (var c in this.elDestDom.childNodes) {
+				if (typeof this.elDestDom.childNodes[c].tagName == "undefined") continue;
+				if (this.elDestDom.childNodes[c].tagName.toUpperCase() != "DIV") continue;
+				cnt++;
+				if (cnt <= this._config.destDivsSkip) continue;
+				rem.push(this.elDestDom.childNodes[c]);
+			}
+		}
+		for (var c in rem) {
+			if (!rem.hasOwnProperty(c)) continue;
+			rem[c].parentNode.removeChild(rem[c]);
 		}
 	}
 	if (!refNode) {
@@ -353,7 +405,7 @@ _home_section.prototype.onAction = function(req) {
 		}
 	}
 	this.domUpdate(sd);
-	this.actionStatSave();
+	if (this._config.statSave) this.actionStatSave();
 };
 _home_section.prototype.onActionStat = function(req) {
 	var r = req;
@@ -373,7 +425,7 @@ _home_section.prototype.onData = function(res) {
 		}
 	}
 	this.domUpdate(sd);
-	this.actionStatSave();
+	if (this._config.statSave) this.actionStatSave();
 };
 if (thirdparty_shared.core._loaded) {
 	thirdparty_shared.core._obj.pluginRegProto(_home_section, __name_this, true);
