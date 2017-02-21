@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Более 30 российских банков стали участниками платёжной системы "Мир"</title>
+</head>
+<body>
+<!-- -------------- teaser (noSPB) ------------------- -->
+<div style="text-align:center;display:none;margin:2px 0;" id="platjozhnaia-sistema-mir">
+	<div style="display:inline-block;width:100%;height:90px;">
+		<a href="/press/speshit-vzroslet-vredno-dlja-zdorov-ja/Tpooli---qdWwEwVQS7fzs/" style="display:block;float:left;width:100px;height:90px;background:url('/thirdparty-v2/_blocks/teasers/platjozhnaia-sistema-mir/teaser.jpg') center no-repeat;background-size:cover;" target="_blank"></a>
+		<div style="margin-left:105px;text-align:left;">
+			<a href="/press/speshit-vzroslet-vredno-dlja-zdorov-ja/Tpooli---qdWwEwVQS7fzs/" target="_blank" style="color:#000;font-size:13px;font-family: Helvetica, Arial, sans-serif;font-weight:bold;text-decoration:underline;">Более 30 российских банков стали участниками платёжной системы "Мир"</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function(){
+		var el = document.getElementById("platjozhnaia-sistema-mir");
+		if (el === null) return;
+		var tm = 100;
+		var t = 100;
+		var tc = 0;
+		var f;
+		f = function(d) {
+			if (typeof d == "object") {
+				if (d.region != "Санкт-Петербург") {
+					el.style.display = "block";
+				}
+				return;
+			}
+			tc++;
+			t = t * 2;
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- -------------- /teaser (noSPB) ------------------- -->
+</body>
+</html>

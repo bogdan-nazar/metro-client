@@ -1,0 +1,133 @@
+.olymp-stand.w300 {
+	width:300px;
+	text-align:center;
+}
+.olymp-stand .inline {
+	font-family:Arial,Helvetica,sans-serif;
+	margin:5px 5px 0 5px;
+}
+.olymp-stand.w300 .inline {
+	margin:0;
+}
+.olymp-stand .inline .rel {
+	position:relative;
+	width:100%;
+	-khtml-opacity:0.999;
+	-moz-opacity:0.999;
+	-web-kit-opacity:0.999;
+	opacity:0.999;
+}
+.olymp-stand .inline .rel .shad {
+	position:absolute;
+	width:100%;
+	height:63px;
+	background-color:#fff;
+	box-shadow:0 2px 10px rgba(0,0,0,0.3);
+	z-index:-1;
+}
+.olymp-stand.w300 .inline .rel .shad {
+	height:23px;
+}
+.olymp-stand .inline table {
+	border:0;
+	width:100%;
+}
+.olymp-stand.w300 .inline table {
+	width:290px;
+	margin:0 auto;
+	border-spacing:0;
+}
+.olymp-stand .inline table thead th {
+	padding-top:43px;
+	height:20px;
+	font-size:11px;
+	text-transform:uppercase;
+	font-weight:bold;
+	text-align:center;
+}
+.olymp-stand.w300 .inline table thead th {
+	padding-top:0;
+	height:22px;
+}
+.olymp-stand .inline table thead th.place {
+	padding-left:10px;
+	text-align:left;
+}
+.olymp-stand.w300 .inline table thead th.place {
+	padding:0;
+}
+.olymp-stand .inline table thead th.state {
+	text-align:left;
+	background-repeat:no-repeat;
+    background-position:left center;
+    padding-left:22px;
+}
+.olymp-stand .inline table thead th.gold {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('../../_shared/images/gold.png');
+	min-width:10px;
+}
+.olymp-stand .inline table thead th.silver {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('../../_shared/images/silver.png');
+	min-width:10px;
+}
+.olymp-stand .inline table thead th.bronze {
+	background-position:center 17px;
+	background-repeat:no-repeat;
+	background-image:url('../../_shared/images/bronze.png');
+	min-width:10px;
+}
+.olymp-stand.w300 .inline table thead th.gold,
+.olymp-stand.w300 .inline table thead th.silver,
+.olymp-stand.w300 .inline table thead th.bronze {
+	width:23px;
+	background-position:center;
+	font-size:0;
+}
+.olymp-stand .inline table tbody tr {
+	border-bottom:1px solid #ccc;
+}
+.olymp-stand .inline table tbody tr.ru {
+	background-color:#ececec;
+}
+.olymp-stand .inline table tbody td {
+	padding:12px 0;
+	font-size:12px;
+	text-align:center;
+	background-color:transparent;
+}
+.olymp-stand .inline table tbody td {
+	padding:5px 0;
+}
+.olymp-stand .inline table tbody td.place {
+	padding-left:10px;
+	text-align:left;
+	font-size:10px;
+	color:#9a9a9a;
+}
+.olymp-stand.w300 .inline table tbody td.place {
+	padding-left:0;
+	text-align:center;
+    font-size:12px;
+    line-height:12px;
+}
+.olymp-stand .inline table tbody td.state {
+	padding-left:28px;
+	font-weight:bold;
+	text-align:left;
+	background-position:left center;
+	background-repeat:no-repeat;
+}
+.olymp-stand.w300 .inline table tbody td.state {
+	font-weight:normal;
+}
+.olymp-stand .inline table tbody td.total {
+	font-weight:bold;
+}
+.olymp-stand .inline table tbody td.state {
+	background-image:url('../../_shared/images/flags/olympic.png');
+	background-size:18px 14px;
+}

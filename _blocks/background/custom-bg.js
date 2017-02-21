@@ -1,9 +1,9 @@
 /*
  * Плагин Metro Background Changer
- * Версия: 1.0.0 (22.10.2013 11:58 +0400)
+ * Версия: 1.0.2 (30.11.2015 17:32 +0400)
  * Developer: Bogdan Nazar (me@bogdan-nazar.ru)
  * Type: Anonymous Object
- * Copyright (c) 2005-2013 Metro
+ * Copyright (c) 2005-2015 Metro
  *
  * Требования:  -
  */
@@ -19,7 +19,7 @@
 		nameImages:	"images",
 		nameRes:	"custom-bg",
 		nameSection:"_blocks",
-		version:	"1.0.1",
+		version:	"1.0.2",
 	};
 	var head = document.getElementsByTagName("head")[0];
 	if (!head.childNodes.length) return;
@@ -75,7 +75,10 @@
 			if (config.bgRepeat) document.body.style.backgroundRepeat = config.bgRepeat;
 			if (config.bgSize) document.body.style.backgroundSize = config.bgSize;
 			if (config.bgAttach) document.body.style.backgroundAttachment = config.bgAttach;
-			document.body.style.backgroundImage = "url('/thirdparty-v2/" + config.nameSection + "/" + config.nameDir + "/" + config.nameImages + "/" + config.bg + "')";
+			var bgImg = "";
+			if (config.bg.indexOf("/") === 0) bgImg = config.bg;
+			else bgImg = "/thirdparty-v2/" + config.nameSection + "/" + config.nameDir + "/" + config.nameImages + "/" + config.bg;
+			document.body.style.backgroundImage = "url('" + bgImg + "')";
 		}
 	};
 	var ival;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Lang" content="en">
+<meta name="author" content="">
+<meta http-equiv="Reply-to" content="@.com">
+<meta name="generator" content="PhpED 6.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="creation-date" content="06/01/2011">
+<meta name="revisit-after" content="15 days">
+<title>Orphus</title>
+<link rel="stylesheet" type="text/css" href="my.css">
+</head>
+<body>
+<!--
+<script type="text/javascript" src="/orphus/orphus.js"><\/script>
+<a href="http://orphus.ru" id="orphus" target="_blank">
+<img alt="Система Orphus" src="/orphus/orphus.gif" border="0" width="257" height="48" />
+</a>
+-->
+<script type="text/javascript">
+(function(){
+	var div = $(".article-wrapper .article-main-wrapper .body-area");
+	if (!div.length) return;
+	div = div[0];
+	var img = document.createElement("IMG");
+	img.src = "/orphus/orphus.gif";
+	img.alt = "Система Orphus";
+	img.border = "0";
+	img.width = "257";
+	img.height = "48";
+	var a = document.createElement("A");
+	a.href = "http://orphus.ru";
+	a.target = "_blank";
+	a.id = "orphus";
+	a.appendChild(img);
+	var s = document.createElement("SCRIPT");
+	s.type = "text/javascript";
+	s.src = "/thirdparty-v2/_plugins/orphus/orphus.js";
+	h = document.getElementsByTagName("HEAD")[0];
+	h.appendChild(s);
+	var wrap = document.createElement("DIV");
+	wrap.style.padding = "10px 0";
+	wrap.style.textAlign = "right";
+	wrap.appendChild(a);
+	div.appendChild(wrap);
+})();
+</script>
+</body>
+</html>

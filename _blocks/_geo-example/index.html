@@ -1,0 +1,43 @@
+<!-- AdLabs Code Start -->
+<div id="thirdparty-ad-labs" style="margin:0 auto;width:300px;padding:10px 0;"></div>
+<script type="text/javascript">
+	(function(){
+		var name = "ad-labs",
+			main = document.getElementById("thirdparty-" + name);
+		if (!main) return;
+		var f,
+			t = 100,//таймаут проверки готовности Geo плагина
+			tc = 0,//номер текущей попытки получения гео данных
+			tm = 100;//максимальное число попыток получения гео данных
+		f = function(d) {
+			if (typeof d == "object") {
+				if (!((d.region.indexOf("Санкт-Петербург") != -1) || (d.region.indexOf("Ленинград") != -1))) {
+					// -----> блок кода, вставляющий баннер
+					var el = document.createElement("DIV");
+					main.appendChild(el);
+					//el.innerHTML = "<div><img src="path/to/banner.gif" /></div>";
+					// <------ конец блока кода, вставляющего баннер
+				}
+				return;
+			}
+			tc++;
+			//чтоб не перегружать и без того перегруженную страницу
+			//при каждой проверке увеличиваем таймаут в 2 раза
+			t = t * 2;
+			//проверяем загрузилось ли ядро и плагин geo
+			if (typeof thirdparty_core == "undefined") {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			var g = thirdparty_core.pluginGet("iptogeo");
+			if (!g) {
+				if (tc < tm) window.setTimeout(f, t);
+				return;
+			}
+			//получаем гео-данные и рендерим баннер
+			g.getData(f);
+		}
+		f();
+	})();
+</script>
+<!-- AdLabs Code End -->

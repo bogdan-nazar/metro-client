@@ -105,7 +105,7 @@ _p.prototype.getData = function(cb) {
 			} catch(e) {
 				self.plCore.console(__name_script + " > " + "getData: Callback execution error. " + e.message + " [" + e.name + "/" + e.type + "]");
 			}
-		}, 0);
+		}, 10);
 	} else {
 		if (typeof cb == "boolean") return false;
 		this._clientCBs.push = cb;

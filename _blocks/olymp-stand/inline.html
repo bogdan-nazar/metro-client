@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Рио 2016. Медальный зачет</title>
+</head>
+<body>
+<!-- ---------------- Медальный зачет (v1.0.18) ---------------- -->
+<div class="olymp-stand">
+	<div class="inline">
+		<div class="rel" id="olymp-stand-rel">
+			<div class="shad"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+(function(){
+	//конфиг
+	var asCol = true,//true - как колонка, false - как большая таблица
+		asColClass = "w300",
+		asColMore = "/sport/olimpiada-v-rio-de-zhanejro-2016-medal-nyj-zachjot/Tpophe---g8t6b6cG4UI/",
+		com = null,
+		cont = document.getElementById("olymp-stand-rel"),
+		inst = 0,
+		run = null,
+		standMax = 10,//-1 или число (напр. 10);
+		ver = "1.0.18";
+	//добавляем стили на страницу
+	if (!window.olympStand) {
+		window.olympStand = com = {
+			data: false,
+			id: 0
+		};
+		var s = document.createElement("LINK");
+		s.rel = "stylesheet";
+		s.type = "text/css";
+		s.async = true;
+		s.href = "/thirdparty-v2/_blocks/olymp-stand/inline.css?v=" + ver;
+		document.getElementsByTagName("head")[0].appendChild(s);
+	} else {
+		com = window.olympStand;
+		inst = ++com.id;
+	}
+	cont.id = cont.id + inst;
+	if (window.olympStand.data === false) {
+		window.olympStand.data = null;
+		//загружаем данные
+		s = document.createElement("SCRIPT");
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = "/thirdparty-v2/_blocks/olymp-stand/data.js?v=" + ver;
+		document.getElementsByTagName("head")[0].appendChild(s);
+	}
+	run = function(data) {
+		//формируем HTML
+		var ac = "appendChild",
+			c = 0, c1,
+			ce = function(el) {
+				return document.createElement(el);
+			},
+			cur = 0,
+			cols = [
+				{className: "place"},
+				{className: "state", val: "name", cnAdd: true},
+				{className: "gold", val: "g"},
+				{className: "silver", val: "s"},
+				{className: "bronze", val: "b"},
+				{className: "total"}
+			],
+			d = data,
+			el1, el2, el3, l, l1,
+			max = standMax == -1 ? 1000 : standMax,
+			tb,
+			titles = [
+				{className: "place", value: "Место"},
+				{className: "state", value: "Страна"},
+				{className: "gold", value: "Золото"},
+				{className: "silver", value: "Серебро"},
+				{className: "bronze", value: "Бронза"},
+				{className: "", value: "Всего"}
+			];
+		//таблица
+		el1 = ce("TABLE");
+		//заголовок
+		tb = ce("THEAD");
+		cont[ac](el1);
+		el1[ac](tb);
+		el2 = ce("TR");
+		tb[ac](el2);
+		l = titles.length;
+		for (; c < l; c++) {
+			el3 = ce("TH");
+			if (titles[c].className) el3.className = titles[c].className;
+			el3.innerHTML = titles[c].value;
+			el2[ac](el3);
+		}
+		//сортируем данные
+		d.sort(function(a, b) {
+			var at = a.g + a.s + a.b;
+			var bt = b.g + b.s + b.b;
+			if (a.g == b.g) {
+				if (a.s == b.s) {
+					if (a.b == b.b) {
+						if (at == bt) {
+							return a.name < b.name ? -1 : 1;
+						} else {
+							return at > bt ? -1 : 1;
+						}
+					} else {
+						return a.b > b.b ? -1 : 1;
+					}
+				} else {
+					return a.s > b.s ? -1 : 1;
+				}
+			} else {
+				return a.g > b.g ? -1 : 1;
+			}
+		});
+		//остальные ячейки
+		tb = ce("TBODY");
+		el1[ac](tb);
+		c = 0;
+		l = d.length;
+		for (; c < l; c++) {
+			if (!d[c].vis) continue;
+			cur++;
+			if (cur > max) break;
+			el1 = ce("TR");
+			if (d[c].f == "ru") el1.className = "ru";
+			tb[ac](el1);
+			c1 = 0;
+			l1 = cols.length;
+			for (; c1 < l1; c1++) {
+				el2 = ce("TD");
+				if (cols[c1].className) el2.className = cols[c1].className;
+				if (cols[c1].cnAdd && d[c].f) {
+					el2.style.backgroundImage = "url('/thirdparty-v2/_shared/images/flags/" + d[c].f + ".png')";
+				}
+				el1[ac](el2);
+				if (cols[c1].val) el2.innerHTML = d[c][cols[c1].val];
+				else {
+					switch(c1) {
+						case 0:
+							el2.innerHTML = c + 1;
+							break;
+						case 5:
+							el2.innerHTML = (d[c].g + d[c].s + d[c].b);
+					}
+				}
+			}
+		}
+		if (asCol) {
+			cont.parentNode.parentNode.className = cont.parentNode.parentNode.className + " " + asColClass;
+			el1 = ce("DIV");
+			el1.className = "more";
+			el2 = ce("A");
+			el2.href = asColMore;
+			el2.target = "_blank";
+			el2.innerHTML = "Посмотреть все";
+			el1.appendChild(el2);
+			cont.appendChild(el1);
+		}
+	};
+	var cur = 0,
+	max = 500,
+	wait = function(){
+		if (com.data) {
+			run(com.data);
+		} else {
+			cur++;
+			if (cur < max) window.setTimeout(wait, 500);
+		}
+	};
+	wait();
+})();
+</script>
+
+</body>
+</html>
